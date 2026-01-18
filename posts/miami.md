@@ -2,6 +2,7 @@
 title: "Cost of Living in Miami, FL: 2026 Price Guide"
 date: "01/10/2026"
 currency: "$"
+excerpt: "Groceries and insurance costs are 20% higher in Florida. See the real cost of living in Miami-Dade."
 costs:
   - category: "Rent (1-Bed Downtown)"
     price: "2850"

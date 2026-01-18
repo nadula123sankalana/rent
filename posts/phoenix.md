@@ -2,6 +2,7 @@
 title: "Cost of Living in Phoenix, AZ: 2026 Price Guide"
 date: "01/05/2026"
 currency: "$"
+excerpt: "Summer AC costs dominate Phoenix budgets. Compare downtown rent to suburban alternatives."
 costs:
   - category: "Rent (1-Bed Downtown)"
     price: "1850"

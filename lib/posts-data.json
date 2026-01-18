@@ -32,7 +32,8 @@
       }
     ],
     "content": "\r\nAtlanta blends strong job growth with a manageable cost baseline. Use this USD\r\ndataset to compare monthly essentials.\r\n",
-    "verdict": ""
+    "verdict": "",
+    "excerpt": "Atlanta utilities and car insurance can surprise new movers. See how totals break down in 2026."
   },
   {
     "slug": "austin",
@@ -67,7 +68,8 @@
       }
     ],
     "content": "\r\nAustin continues to attract new residents with strong job growth, live music,\r\nand a thriving food scene. This dataset focuses on core monthly expenses in USD\r\nto help Americans budget with confidence.\r\n",
-    "verdict": "💰 Salary Needed to Live Here: You need to earn at least $65,000/year to live comfortably in Austin, TX in 2026."
+    "verdict": "💰 Salary Needed to Live Here: You need to earn at least $65,000/year to live comfortably in Austin, TX in 2026.",
+    "excerpt": "Rent prices in Travis County have dropped. See the 2026 breakdown for downtown vs. suburbs."
   },
   {
     "slug": "dallas",
@@ -102,7 +104,8 @@
       }
     ],
     "content": "\r\nDallas offers strong job growth and a lower cost baseline than coastal metros.\r\nUse this dataset to compare monthly essentials in USD.\r\n",
-    "verdict": ""
+    "verdict": "",
+    "excerpt": "Dallas rents are steadier than Austin's. Compare Uptown pricing with nearby suburbs in 2026."
   },
   {
     "slug": "denver",
@@ -137,7 +140,8 @@
       }
     ],
     "content": "\r\nDenver blends outdoor access with a competitive housing market. Compare monthly\r\nUSD costs before a move.\r\n",
-    "verdict": ""
+    "verdict": "",
+    "excerpt": "Housing near Union Station keeps Denver prices elevated. See 2026 cost differences by neighborhood."
   },
   {
     "slug": "miami",
@@ -172,7 +176,8 @@
       }
     ],
     "content": "\r\nMiami combines beach access with high demand for downtown apartments. Use this\r\nUSD dataset to plan monthly expenses.\r\n",
-    "verdict": ""
+    "verdict": "",
+    "excerpt": "Groceries and insurance costs are 20% higher in Florida. See the real cost of living in Miami-Dade."
   },
   {
     "slug": "phoenix",
@@ -207,7 +212,8 @@
       }
     ],
     "content": "\r\nPhoenix offers warmer weather with lower housing costs than coastal cities.\r\nPlan your monthly USD budget with this dataset.\r\n",
-    "verdict": ""
+    "verdict": "",
+    "excerpt": "Summer AC costs dominate Phoenix budgets. Compare downtown rent to suburban alternatives."
   },
   {
     "slug": "seattle",
@@ -242,6 +248,7 @@
       }
     ],
     "content": "\r\nSeattle remains a high-demand tech hub with premium rents. Use this USD dataset\r\nto estimate monthly essentials.\r\n",
-    "verdict": ""
+    "verdict": "",
+    "excerpt": "Downtown Seattle rents remain high. See what groceries and insurance add to the monthly total."
   }
 ]

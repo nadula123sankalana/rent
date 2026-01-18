@@ -7,9 +7,9 @@ import Header from "@/components/Header";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "US Cost of Living & Lifestyle Database",
+  title: "US Cost of Living Database 2026 | Real Prices for 50 States",
   description:
-    "US-first cost of living data, pricing, and lifestyle benchmarks for major American cities.",
+    "The only non-AI price guide. Verified rent, food, and insurance costs for Austin, Miami, NYC, and more.",
   metadataBase: new URL("https://example.com")
 };
 

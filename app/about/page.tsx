@@ -17,6 +17,16 @@ export default function AboutPage() {
         listings (Zillow), government utility reports, and user submissions to
         ensure 98% accuracy.
       </p>
+      <h2>Data Sources</h2>
+      <p>
+        Where do we get our data? We do not guess. Our pricing data is
+        aggregated from:
+      </p>
+      <ul>
+        <li>Zillow &amp; Redfin Rental Markets (For housing averages).</li>
+        <li>USDA Food Plans (For grocery estimates).</li>
+        <li>Local Utility Providers (For electricity/water rates).</li>
+      </ul>
       <p>
         Our research focuses on apartments, groceries, healthcare, utilities,
         and transportation costs with US-standard formatting, so you can compare

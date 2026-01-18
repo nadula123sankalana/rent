@@ -25,7 +25,8 @@ const posts = files.map((file) => {
     currency: data.currency ?? "$",
     costs: Array.isArray(data.costs) ? data.costs : [],
     content,
-    verdict: data.verdict ?? ""
+    verdict: data.verdict ?? "",
+    excerpt: data.excerpt ?? ""
   };
 });
 

@@ -2,6 +2,7 @@
 title: "Cost of Living in Dallas, TX: 2026 Price Guide"
 date: "01/12/2026"
 currency: "$"
+excerpt: "Dallas rents are steadier than Austin's. Compare Uptown pricing with nearby suburbs in 2026."
 costs:
   - category: "Rent (1-Bed Downtown)"
     price: "2100"

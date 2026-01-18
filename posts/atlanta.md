@@ -2,6 +2,7 @@
 title: "Cost of Living in Atlanta, GA: 2026 Price Guide"
 date: "01/04/2026"
 currency: "$"
+excerpt: "Atlanta utilities and car insurance can surprise new movers. See how totals break down in 2026."
 costs:
   - category: "Rent (1-Bed Downtown)"
     price: "2000"

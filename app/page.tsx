@@ -20,20 +20,6 @@ export default function HomePage() {
         </p>
       </section>
 
-      <section className="space-y-4">
-        <p className="text-sm uppercase tracking-[0.2em] text-emerald-700">
-          The Modern Ledger
-        </p>
-        <h1 className="text-4xl font-semibold">
-          Cost of Living & Lifestyle Database
-        </h1>
-        <p className="max-w-2xl text-lg text-slate-600">
-          US-first pricing benchmarks built for Americans comparing apartments,
-          groceries, insurance, and everyday essentials across fast-growing
-          cities.
-        </p>
-      </section>
-
       <section className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
         {posts.map((post) => (
           <Link
@@ -49,8 +35,8 @@ export default function HomePage() {
               {post.title}
             </h2>
             <p className="mt-2 text-sm text-slate-600">
-              Explore local pricing from rent to utilities with US-standard
-              formatting and USD benchmarks.
+              {post.excerpt ??
+                "Explore local pricing from rent to utilities with US-standard formatting and USD benchmarks."}
             </p>
             <span className="mt-4 inline-flex text-sm font-medium text-emerald-700">
               View dataset →

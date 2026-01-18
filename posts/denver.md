@@ -2,6 +2,7 @@
 title: "Cost of Living in Denver, CO: 2026 Price Guide"
 date: "01/08/2026"
 currency: "$"
+excerpt: "Housing near Union Station keeps Denver prices elevated. See 2026 cost differences by neighborhood."
 costs:
   - category: "Rent (1-Bed Downtown)"
     price: "2300"

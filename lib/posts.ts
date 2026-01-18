@@ -14,6 +14,7 @@ export type PostData = {
   costs: CostItem[];
   content: string;
   verdict?: string;
+  excerpt?: string;
 };
 const posts = postsData as PostData[];
 

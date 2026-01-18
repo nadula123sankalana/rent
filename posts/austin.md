@@ -2,6 +2,7 @@
 title: "Cost of Living in Austin, TX: 2026 Price Guide"
 date: "01/25/2026"
 currency: "$"
+excerpt: "Rent prices in Travis County have dropped. See the 2026 breakdown for downtown vs. suburbs."
 verdict: "💰 Salary Needed to Live Here: You need to earn at least $65,000/year to live comfortably in Austin, TX in 2026."
 costs:
   - category: "Rent (1-Bed Downtown)"

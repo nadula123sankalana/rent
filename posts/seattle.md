@@ -2,6 +2,7 @@
 title: "Cost of Living in Seattle, WA: 2026 Price Guide"
 date: "01/06/2026"
 currency: "$"
+excerpt: "Downtown Seattle rents remain high. See what groceries and insurance add to the monthly total."
 costs:
   - category: "Rent (1-Bed Downtown)"
     price: "2950"
