@@ -17,7 +17,7 @@ const config: Config = {
         }
       },
       fontFamily: {
-        heading: ["var(--font-playfair)", "Georgia", "serif"],
+        heading: ["var(--font-poppins)", "Poppins", "ui-sans-serif", "system-ui"],
         body: ["var(--font-inter)", "Inter", "ui-sans-serif", "system-ui"]
       }
     }
