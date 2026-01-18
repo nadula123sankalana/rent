@@ -8,7 +8,17 @@ const config: Config = {
       colors: {
         brand: {
           700: "#047857"
+        },
+        emerald: {
+          500: "#10b981"
+        },
+        rose: {
+          500: "#f43f5e"
         }
+      },
+      fontFamily: {
+        heading: ["var(--font-playfair)", "Georgia", "serif"],
+        body: ["var(--font-inter)", "Inter", "ui-sans-serif", "system-ui"]
       }
     }
   },

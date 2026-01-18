@@ -44,7 +44,7 @@ export default function HomeSearch({ posts }: HomeSearchProps) {
   return (
     <div className="space-y-10">
       <section className="rounded-3xl border border-white/50 bg-white/70 p-10 shadow-lg shadow-slate-200/40 backdrop-blur">
-        <p className="text-sm uppercase tracking-[0.2em] text-emerald-700">
+        <p className="text-sm uppercase tracking-[0.2em] text-emerald-500">
           Real Cost of Living Data for 2026
         </p>
         <h1 className="mt-3 text-4xl font-semibold text-slate-800">
@@ -57,18 +57,12 @@ export default function HomeSearch({ posts }: HomeSearchProps) {
         </p>
 
         <div className="mt-8">
-          <label
-            htmlFor="city-search"
-            className="text-sm font-medium text-slate-700"
-          >
-            Where are you moving to?
-          </label>
           <input
             id="city-search"
             value={query}
             onChange={(event) => setQuery(event.target.value)}
-            placeholder="Search for Austin, Seattle, Miami..."
-            className="mt-3 w-full rounded-2xl border border-slate-200 bg-white px-5 py-4 text-base text-slate-800 shadow-sm outline-none transition focus:border-emerald-300 focus:ring-2 focus:ring-emerald-200"
+            placeholder="Where are you moving in 2026?"
+            className="mt-3 w-full rounded-3xl border border-slate-200 bg-white px-6 py-5 text-lg text-slate-800 shadow-lg shadow-emerald-100/40 outline-none transition focus:border-emerald-300 focus:ring-2 focus:ring-emerald-200"
           />
         </div>
 
@@ -106,18 +100,20 @@ export default function HomeSearch({ posts }: HomeSearchProps) {
                 href={`/cost-of-living/${post.slug}`}
                 className="group overflow-hidden rounded-2xl border border-white/40 bg-white/70 shadow-lg shadow-slate-200/40 transition hover:-translate-y-1 hover:shadow-emerald-200/40"
               >
-                <div
-                  className="h-40 w-full bg-cover bg-center"
-                  style={{ backgroundImage: `url(${imageUrl})` }}
-                />
+                <div className="relative h-44 w-full overflow-hidden">
+                  <div
+                    className="absolute inset-0 bg-cover bg-center transition duration-500 group-hover:scale-105"
+                    style={{ backgroundImage: `url(${imageUrl})` }}
+                  />
+                  <span className="absolute right-4 top-4 rounded-full bg-emerald-500/90 px-3 py-1 text-xs font-semibold text-white shadow-md">
+                    {salary} Salary Req.
+                  </span>
+                </div>
                 <div className="p-5">
                   <div className="flex items-center justify-between">
                     <h3 className="text-lg font-semibold text-slate-800">
                       {city}
                     </h3>
-                    <span className="rounded-full bg-emerald-50 px-3 py-1 text-xs font-semibold text-emerald-700">
-                      {salary} Salary Needed
-                    </span>
                   </div>
                   <p className="mt-2 text-sm text-slate-600">
                     {post.excerpt ??

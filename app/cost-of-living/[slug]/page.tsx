@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import CostTable from "@/components/CostTable";
+import { CheckCircle2 } from "lucide-react";
 import ReactMarkdown from "react-markdown";
 import { getPostBySlug, getPostSlugs } from "@/lib/posts";
 
@@ -64,7 +65,7 @@ export default async function CostOfLivingPage({ params }: PageProps) {
   const verdictTone = salaryNeeded >= 80000 ? "warning" : "success";
   const verdictClasses =
     verdictTone === "warning"
-      ? "border-amber-100 bg-amber-50/70 text-amber-900"
+      ? "border-rose-100 bg-rose-50/70 text-rose-700"
       : "border-emerald-100 bg-emerald-50/70 text-emerald-900";
 
   const datasetSchema = {
@@ -91,9 +92,12 @@ export default async function CostOfLivingPage({ params }: PageProps) {
         <p className="text-sm uppercase tracking-[0.2em] text-emerald-700">
           US Pricing Dataset
         </p>
-        <h1 className="text-4xl font-semibold text-slate-800">
-          {post.title}
-        </h1>
+        <div className="flex flex-wrap items-center gap-2">
+          <CheckCircle2 className="h-5 w-5 text-blue-600" />
+          <h1 className="text-4xl font-semibold text-slate-800">
+            {post.title}
+          </h1>
+        </div>
         <div className="flex flex-wrap items-center gap-3 text-sm text-slate-500">
           <span>Published {post.date}</span>
           <span className="rounded-full bg-slate-100 px-3 py-1 text-xs text-slate-500">

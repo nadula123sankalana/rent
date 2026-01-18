@@ -31,7 +31,8 @@ export default function CostTable({ costs, currency = "$" }: CostTableProps) {
   };
 
   return (
-    <div className="overflow-hidden rounded-2xl border border-white/40 bg-white/70 shadow-lg shadow-slate-200/40 backdrop-blur">
+    <div className="space-y-3">
+      <div className="overflow-hidden rounded-2xl border border-white/40 bg-white/70 shadow-lg shadow-slate-200/40 backdrop-blur">
       <table className="min-w-full table-auto text-left">
         <thead className="bg-white/80">
           <tr>
@@ -86,6 +87,10 @@ export default function CostTable({ costs, currency = "$" }: CostTableProps) {
           </tr>
         </tfoot>
       </table>
+      </div>
+      <p className="text-xs italic text-slate-400">
+        Source: Zillow Jan 2026 Data &amp; Local Utility Reports.
+      </p>
     </div>
   );
 }
