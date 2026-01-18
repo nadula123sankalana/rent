@@ -1,5 +1,40 @@
 [
   {
+    "slug": "atlanta",
+    "title": "Cost of Living in Atlanta, GA: 2026 Price Guide",
+    "date": "01/04/2026",
+    "currency": "$",
+    "costs": [
+      {
+        "category": "Rent (1-Bed Downtown)",
+        "price": "2000",
+        "note": "Midtown demand"
+      },
+      {
+        "category": "Groceries (Kroger)",
+        "price": "540",
+        "note": "Monthly for 1 person"
+      },
+      {
+        "category": "Health Insurance",
+        "price": "440",
+        "note": "Silver Plan (ACA)"
+      },
+      {
+        "category": "Car Insurance",
+        "price": "190",
+        "note": "Georgia average"
+      },
+      {
+        "category": "Utilities (Summer AC)",
+        "price": "215",
+        "note": "Peak heat months"
+      }
+    ],
+    "content": "\r\nAtlanta blends strong job growth with a manageable cost baseline. Use this USD\r\ndataset to compare monthly essentials.\r\n",
+    "verdict": ""
+  },
+  {
     "slug": "austin",
     "title": "Cost of Living in Austin, TX: 2026 Price Guide",
     "date": "01/25/2026",
@@ -31,6 +66,182 @@
         "note": "Peak heat months"
       }
     ],
-    "content": "\r\nAustin continues to attract new residents with strong job growth, live music,\r\nand a thriving food scene. This dataset focuses on core monthly expenses in USD\r\nto help Americans budget with confidence.\r\n"
+    "content": "\r\nAustin continues to attract new residents with strong job growth, live music,\r\nand a thriving food scene. This dataset focuses on core monthly expenses in USD\r\nto help Americans budget with confidence.\r\n",
+    "verdict": "💰 Salary Needed to Live Here: You need to earn at least $65,000/year to live comfortably in Austin, TX in 2026."
+  },
+  {
+    "slug": "dallas",
+    "title": "Cost of Living in Dallas, TX: 2026 Price Guide",
+    "date": "01/12/2026",
+    "currency": "$",
+    "costs": [
+      {
+        "category": "Rent (1-Bed Downtown)",
+        "price": "2100",
+        "note": "Popular Uptown corridor"
+      },
+      {
+        "category": "Groceries (H-E-B)",
+        "price": "520",
+        "note": "Monthly for 1 person"
+      },
+      {
+        "category": "Health Insurance",
+        "price": "430",
+        "note": "Silver Plan (ACA)"
+      },
+      {
+        "category": "Car Insurance",
+        "price": "170",
+        "note": "Texas average"
+      },
+      {
+        "category": "Utilities (Summer AC)",
+        "price": "205",
+        "note": "Peak heat months"
+      }
+    ],
+    "content": "\r\nDallas offers strong job growth and a lower cost baseline than coastal metros.\r\nUse this dataset to compare monthly essentials in USD.\r\n",
+    "verdict": ""
+  },
+  {
+    "slug": "denver",
+    "title": "Cost of Living in Denver, CO: 2026 Price Guide",
+    "date": "01/08/2026",
+    "currency": "$",
+    "costs": [
+      {
+        "category": "Rent (1-Bed Downtown)",
+        "price": "2300",
+        "note": "Union Station area"
+      },
+      {
+        "category": "Groceries (King Soopers)",
+        "price": "560",
+        "note": "Monthly for 1 person"
+      },
+      {
+        "category": "Health Insurance",
+        "price": "445",
+        "note": "Silver Plan (ACA)"
+      },
+      {
+        "category": "Car Insurance",
+        "price": "165",
+        "note": "Colorado average"
+      },
+      {
+        "category": "Utilities (Winter Heat)",
+        "price": "210",
+        "note": "Peak heating months"
+      }
+    ],
+    "content": "\r\nDenver blends outdoor access with a competitive housing market. Compare monthly\r\nUSD costs before a move.\r\n",
+    "verdict": ""
+  },
+  {
+    "slug": "miami",
+    "title": "Cost of Living in Miami, FL: 2026 Price Guide",
+    "date": "01/10/2026",
+    "currency": "$",
+    "costs": [
+      {
+        "category": "Rent (1-Bed Downtown)",
+        "price": "2850",
+        "note": "Brickell demand"
+      },
+      {
+        "category": "Groceries (Publix)",
+        "price": "620",
+        "note": "Monthly for 1 person"
+      },
+      {
+        "category": "Health Insurance",
+        "price": "470",
+        "note": "Silver Plan (ACA)"
+      },
+      {
+        "category": "Car Insurance",
+        "price": "215",
+        "note": "Florida average"
+      },
+      {
+        "category": "Utilities (Summer AC)",
+        "price": "240",
+        "note": "Humidity increases usage"
+      }
+    ],
+    "content": "\r\nMiami combines beach access with high demand for downtown apartments. Use this\r\nUSD dataset to plan monthly expenses.\r\n",
+    "verdict": ""
+  },
+  {
+    "slug": "phoenix",
+    "title": "Cost of Living in Phoenix, AZ: 2026 Price Guide",
+    "date": "01/05/2026",
+    "currency": "$",
+    "costs": [
+      {
+        "category": "Rent (1-Bed Downtown)",
+        "price": "1850",
+        "note": "Roosevelt Row area"
+      },
+      {
+        "category": "Groceries (Fry's)",
+        "price": "510",
+        "note": "Monthly for 1 person"
+      },
+      {
+        "category": "Health Insurance",
+        "price": "420",
+        "note": "Silver Plan (ACA)"
+      },
+      {
+        "category": "Car Insurance",
+        "price": "175",
+        "note": "Arizona average"
+      },
+      {
+        "category": "Utilities (Summer AC)",
+        "price": "260",
+        "note": "Peak heat months"
+      }
+    ],
+    "content": "\r\nPhoenix offers warmer weather with lower housing costs than coastal cities.\r\nPlan your monthly USD budget with this dataset.\r\n",
+    "verdict": ""
+  },
+  {
+    "slug": "seattle",
+    "title": "Cost of Living in Seattle, WA: 2026 Price Guide",
+    "date": "01/06/2026",
+    "currency": "$",
+    "costs": [
+      {
+        "category": "Rent (1-Bed Downtown)",
+        "price": "2950",
+        "note": "South Lake Union demand"
+      },
+      {
+        "category": "Groceries (QFC)",
+        "price": "640",
+        "note": "Monthly for 1 person"
+      },
+      {
+        "category": "Health Insurance",
+        "price": "460",
+        "note": "Silver Plan (ACA)"
+      },
+      {
+        "category": "Car Insurance",
+        "price": "185",
+        "note": "Washington average"
+      },
+      {
+        "category": "Utilities (Winter Heat)",
+        "price": "195",
+        "note": "Peak heating months"
+      }
+    ],
+    "content": "\r\nSeattle remains a high-demand tech hub with premium rents. Use this USD dataset\r\nto estimate monthly essentials.\r\n",
+    "verdict": ""
   }
 ]

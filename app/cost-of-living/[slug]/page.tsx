@@ -68,6 +68,17 @@ export default async function CostOfLivingPage({ params }: PageProps) {
         <p className="text-sm text-slate-500">Published {post.date}</p>
       </header>
 
+      {post.verdict ? (
+        <section className="rounded-2xl border border-emerald-100 bg-emerald-50/70 p-6">
+          <p className="text-xs uppercase tracking-[0.2em] text-emerald-700">
+            Quick Verdict
+          </p>
+          <p className="mt-3 text-base font-medium text-slate-800">
+            {post.verdict}
+          </p>
+        </section>
+      ) : null}
+
       <CostTable costs={post.costs} currency={post.currency} />
 
       <section className="prose prose-slate max-w-3xl">

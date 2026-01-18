@@ -13,6 +13,7 @@ export type PostData = {
   currency?: string;
   costs: CostItem[];
   content: string;
+  verdict?: string;
 };
 const posts = postsData as PostData[];
 

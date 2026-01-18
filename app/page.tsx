@@ -6,6 +6,20 @@ export default function HomePage() {
 
   return (
     <div className="space-y-12">
+      <section className="rounded-3xl border border-white/50 bg-white/70 p-10 shadow-lg shadow-slate-200/40 backdrop-blur">
+        <p className="text-sm uppercase tracking-[0.2em] text-emerald-700">
+          Real Cost of Living Data for 2026
+        </p>
+        <h1 className="mt-3 text-4xl font-semibold text-slate-800">
+          We track rent, food, and insurance prices across 50 US States to help
+          you budget your move.
+        </h1>
+        <p className="mt-4 max-w-2xl text-base text-slate-600">
+          Compare apartments, groceries, utilities, and essential monthly
+          expenses with USD-first formatting and US locale standards.
+        </p>
+      </section>
+
       <section className="space-y-4">
         <p className="text-sm uppercase tracking-[0.2em] text-emerald-700">
           The Modern Ledger
@@ -20,7 +34,7 @@ export default function HomePage() {
         </p>
       </section>
 
-      <section className="grid gap-6 md:grid-cols-2">
+      <section className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
         {posts.map((post) => (
           <Link
             key={post.slug}
