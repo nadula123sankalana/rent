@@ -61,6 +61,22 @@ const formatUsd = (value: number) =>
 
 export default function HomeSearch({ posts }: HomeSearchProps) {
   const [query, setQuery] = useState("");
+  const [showSuggestions, setShowSuggestions] = useState(false);
+  const [focusedIndex, setFocusedIndex] = useState(-1);
+
+  // Suggestions for autocomplete
+  const suggestions = useMemo(() => {
+    const value = query.trim().toLowerCase();
+    if (!value) {
+      return [];
+    }
+    return posts
+      .filter((post) => {
+        const city = extractCity(post.title);
+        return city.toLowerCase().includes(value) || post.title.toLowerCase().includes(value);
+      })
+      .slice(0, 5); // Limit to 5 suggestions
+  }, [posts, query]);
 
   const filtered = useMemo(() => {
     const value = query.trim().toLowerCase();
@@ -73,37 +89,141 @@ export default function HomeSearch({ posts }: HomeSearchProps) {
   }, [posts, query]);
 
   return (
-    <div className="space-y-10">
-      <section className="rounded-3xl border border-white/50 bg-white/70 p-10 shadow-lg shadow-slate-200/40 backdrop-blur">
-        <p className="text-sm uppercase tracking-[0.2em] text-emerald-500">
-          Real Cost of Living Data for 2026
-        </p>
-        <h1 className="mt-3 text-4xl font-semibold text-slate-800">
-          We track rent, food, and insurance prices across 50 US States to help
-          you budget your move.
-        </h1>
-        <p className="mt-4 max-w-2xl text-base text-slate-600">
-          Compare apartments, groceries, utilities, and essential monthly
-          expenses with USD-first formatting and US locale standards.
-        </p>
-
-        <div className="mt-8">
-          <input
-            id="city-search"
-            value={query}
-            onChange={(event) => setQuery(event.target.value)}
-            placeholder="Where are you moving in 2026?"
-            className="mt-3 w-full rounded-3xl border border-slate-200 bg-white px-6 py-5 text-lg text-slate-800 shadow-lg shadow-emerald-100/40 outline-none transition focus:border-emerald-300 focus:ring-2 focus:ring-emerald-200"
-          />
+    <div>
+      <section className="relative w-screen min-h-screen overflow-hidden flex items-center justify-center" style={{ marginLeft: 'calc(50% - 50vw)', marginRight: 'calc(50% - 50vw)', marginTop: '-3rem', maxWidth: '100vw' }}>
+        {/* Background image - full screen */}
+        <div className="absolute inset-0 -z-0">
+          <div 
+            className="h-full w-full bg-cover bg-center bg-no-repeat"
+            style={{ backgroundImage: 'url(/tiny.jpg)' }}
+          ></div>
+          {/* Black transparent overlay for better content visibility */}
+          <div className="absolute inset-0 bg-black/40"></div>
         </div>
 
-        <div className="mt-6 flex flex-wrap gap-3 text-xs text-slate-500">
-          <span className="rounded-full bg-slate-100 px-3 py-1">
-            Data sourced from: Zillow
-          </span>
-          <span className="rounded-full bg-slate-100 px-3 py-1">Redfin</span>
-          <span className="rounded-full bg-slate-100 px-3 py-1">USDA</span>
-          <span className="rounded-full bg-slate-100 px-3 py-1">BLS</span>
+        <div className="relative z-10 mx-auto max-w-6xl px-6 pt-20 text-center md:px-12">
+          {/* Badge - white text */}
+          <div className="mb-6 inline-flex items-center justify-center gap-3">
+            <span className="text-xs font-medium uppercase tracking-wider text-white">
+              Real Cost of Living Data for 2026
+            </span>
+            <span className="h-px w-8 bg-white/60"></span>
+          </div>
+
+          {/* Main heading - white text */}
+          <h1 className="mx-auto mb-6 max-w-5xl text-3xl font-medium leading-[1.3] text-white md:text-4xl lg:text-5xl lg:leading-[1.2]">
+            We track rent, food, and insurance prices across{" "}
+            <span className="relative inline-block text-white">
+              <span className="relative z-10">50 US States</span>
+              <span className="absolute bottom-1.5 left-0 z-0 h-2.5 w-full bg-emerald-400/50"></span>
+            </span>{" "}
+            to help you budget your move.
+          </h1>
+
+          {/* Description - white text */}
+          <p className="mx-auto mb-8 max-w-xl text-sm leading-relaxed text-white/90 md:text-base">
+            Compare apartments, groceries, utilities, and essential monthly
+            expenses with USD-first formatting and US locale standards.
+          </p>
+
+          {/* Search input - larger and more prominent */}
+          <div className="mx-auto mb-8 max-w-3xl">
+            <div className="relative">
+              <div className="absolute left-6 top-1/2 -translate-y-1/2 z-10 text-slate-400">
+                <svg className="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                </svg>
+              </div>
+              <input
+                id="city-search"
+                value={query}
+                onChange={(event) => {
+                  setQuery(event.target.value);
+                  setShowSuggestions(true);
+                  setFocusedIndex(-1);
+                }}
+                onFocus={() => setShowSuggestions(true)}
+                onBlur={() => {
+                  // Delay to allow click events on suggestions
+                  setTimeout(() => setShowSuggestions(false), 200);
+                }}
+                onKeyDown={(e) => {
+                  if (e.key === "ArrowDown") {
+                    e.preventDefault();
+                    setFocusedIndex((prev) => 
+                      prev < suggestions.length - 1 ? prev + 1 : prev
+                    );
+                  } else if (e.key === "ArrowUp") {
+                    e.preventDefault();
+                    setFocusedIndex((prev) => (prev > 0 ? prev - 1 : -1));
+                  } else if (e.key === "Enter" && focusedIndex >= 0) {
+                    e.preventDefault();
+                    const selectedPost = suggestions[focusedIndex];
+                    window.location.href = `/cost-of-living/${selectedPost.slug}`;
+                  }
+                }}
+                placeholder="Where are you moving in 2026?"
+                className="w-full rounded-full border-2 border-white/30 bg-white/95 px-16 py-5 text-lg text-slate-800 shadow-xl shadow-black/20 outline-none transition-all duration-200 placeholder:text-slate-400 focus:border-white focus:bg-white focus:shadow-2xl focus:shadow-black/30 md:text-xl md:py-6"
+              />
+              
+              {/* Suggestions dropdown */}
+              {showSuggestions && suggestions.length > 0 && (
+                <div className="absolute top-full left-0 right-0 mt-2 bg-white rounded-2xl shadow-2xl shadow-black/40 overflow-hidden z-50 border border-slate-100">
+                  {suggestions.map((post, index) => {
+                    const city = extractCity(post.title);
+                    return (
+                      <Link
+                        key={post.slug}
+                        href={`/cost-of-living/${post.slug}`}
+                        className={`block px-6 py-3.5 transition-all duration-150 ${
+                          index === focusedIndex
+                            ? "bg-emerald-50 text-emerald-700"
+                            : "text-slate-700 hover:bg-slate-50"
+                        } ${index !== suggestions.length - 1 ? "border-b border-slate-100" : ""}`}
+                        onMouseEnter={() => setFocusedIndex(index)}
+                      >
+                        <div className="flex items-center justify-between">
+                          <span className="font-medium text-base">{city}</span>
+                          <svg
+                            className={`h-4 w-4 transition-colors ${
+                              index === focusedIndex
+                                ? "text-emerald-500"
+                                : "text-slate-300"
+                            }`}
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                          >
+                            <path
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              strokeWidth={2}
+                              d="M9 5l7 7-7 7"
+                            />
+                          </svg>
+                        </div>
+                      </Link>
+                    );
+                  })}
+                </div>
+              )}
+            </div>
+          </div>
+
+          {/* Data sources - white text */}
+          <div className="flex flex-wrap items-center justify-center gap-3 text-xs">
+            <span className="font-normal text-white/80">Data sourced from:</span>
+            <div className="flex flex-wrap justify-center gap-2">
+              {["Zillow", "Redfin", "USDA", "BLS"].map((source) => (
+                <span
+                  key={source}
+                  className="rounded-md bg-white/90 px-3 py-1 text-xs font-normal text-slate-700 shadow-lg transition-all hover:bg-white hover:shadow-xl"
+                >
+                  {source}
+                </span>
+              ))}
+            </div>
+          </div>
         </div>
       </section>
 
