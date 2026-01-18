@@ -74,38 +74,38 @@
   {
     "slug": "dallas",
     "title": "Cost of Living in Dallas, TX: 2026 Price Guide",
-    "date": "01/12/2026",
+    "date": "01/25/2026",
     "currency": "$",
     "costs": [
       {
         "category": "Rent (1-Bed Downtown)",
-        "price": "2100",
-        "note": "Popular Uptown corridor"
+        "price": "2400",
+        "note": "High demand near Uptown and Deep Ellum"
       },
       {
-        "category": "Groceries (H-E-B)",
-        "price": "520",
-        "note": "Monthly for 1 person"
+        "category": "Rent (1-Bed Suburbs)",
+        "price": "1750",
+        "note": "Cheaper areas like Plano"
       },
       {
-        "category": "Health Insurance",
-        "price": "430",
-        "note": "Silver Plan (ACA)"
+        "category": "Groceries (Monthly)",
+        "price": "480",
+        "note": "Based on USDA Moderate Plan"
       },
       {
-        "category": "Car Insurance",
-        "price": "170",
-        "note": "Texas average"
+        "category": "Utilities (Average)",
+        "price": "210",
+        "note": "Includes Oncor Electric Delivery rates"
       },
       {
-        "category": "Utilities (Summer AC)",
-        "price": "205",
-        "note": "Peak heat months"
+        "category": "Internet (Fiber)",
+        "price": "70",
+        "note": "Standard 500Mbps plan"
       }
     ],
-    "content": "\r\nDallas offers strong job growth and a lower cost baseline than coastal metros.\r\nUse this dataset to compare monthly essentials in USD.\r\n",
-    "verdict": "",
-    "excerpt": "Dallas rents are steadier than Austin's. Compare Uptown pricing with nearby suburbs in 2026."
+    "content": "\r\n## 1. Housing Market: Dallas vs. Suburbs\r\nRent prices in **Dallas** have stabilized in 2026.\r\n* **The Premium Areas:** Living in **Uptown** or **Deep Ellum** commands a premium, with 1-bedrooms averaging **$2,400**.\r\n* **The Budget Move:** By moving 20 minutes out to **Plano**, you can drop your rent to **$1,750**. This is the most common strategy for young professionals here.\r\n\r\n## 2. Utility Costs & Summer Heat\r\nResidents often underestimate the cost of air conditioning in Dallas.\r\n* **Peak Season:** In July, bills from **Oncor Electric Delivery** can spike to **$260**.\r\n* **Water/Trash:** Usually adds another **$50/month** to your bill.\r\n\r\n## 3. Transportation: Car vs. Public Transit\r\nDallas is a car-dependent city.\r\n* **Car Insurance:** Drivers in Texas pay approximately **$185** per month due to heavy traffic on I-35 and the Dallas North Tollway.\r\n* **Public Transit:** The **DART** system is limited. A monthly pass costs **$96**.\r\n\r\n## 4. Food & Entertainment\r\n* **Groceries:** Expect to spend **$480** per month shopping at chains like **Kroger** and **Tom Thumb**.\r\n* **Dining Out:** A dinner for two in **Knox/Henderson** typically runs **$60-$80**.\r\n\r\n### FAQ: Living in Dallas\r\n**Q: Is Dallas expensive for singles?**\r\nA: Compared to Austin, it is cheaper. A single person needs roughly **$3,400** post-tax.\r\n\r\n**Q: What is the main hidden cost?**\r\nA: Toll roads on the Dallas North Tollway and SH 121.\r\n",
+    "verdict": "💰 Salary Needed to Live Here: You need to earn at least $70,000 to live comfortably in Dallas. Rent takes up ~35% of income.",
+    "excerpt": "Real prices for rent, food, and utilities in Dallas. Analysis of Uptown vs. Plano for relocators."
   },
   {
     "slug": "denver",

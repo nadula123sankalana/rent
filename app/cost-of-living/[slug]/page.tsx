@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import CostTable from "@/components/CostTable";
+import ReactMarkdown from "react-markdown";
 import { getPostBySlug, getPostSlugs } from "@/lib/posts";
 
 type PageProps = {
@@ -82,12 +83,7 @@ export default async function CostOfLivingPage({ params }: PageProps) {
       <CostTable costs={post.costs} currency={post.currency} />
 
       <section className="prose prose-slate max-w-3xl">
-        <h2>How to read this dataset</h2>
-        <p>
-          These figures reflect typical monthly spending in USD for one person.
-          Use the totals to compare neighborhoods before a relocation or
-          extended vacation.
-        </p>
+        <ReactMarkdown>{post.content}</ReactMarkdown>
       </section>
     </article>
   );
