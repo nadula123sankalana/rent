@@ -22,6 +22,9 @@ export default function AboutPage() {
         Where do we get our data? We do not guess. Our pricing data is
         aggregated from:
       </p>
+      <p>
+        We verify our data using Zillow, Redfin, and Government Utility Reports.
+      </p>
       <ul>
         <li>Zillow &amp; Redfin Rental Markets (For housing averages).</li>
         <li>USDA Food Plans (For grocery estimates).</li>

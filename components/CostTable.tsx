@@ -1,3 +1,5 @@
+ "use client";
+
 import type { CostItem } from "@/lib/posts";
 
 type CostTableProps = {
@@ -19,6 +21,14 @@ const parsePrice = (raw: string) => {
 
 export default function CostTable({ costs, currency = "$" }: CostTableProps) {
   const total = costs.reduce((sum, item) => sum + parsePrice(item.price), 0);
+  const copyBreakdown = async () => {
+    const lines = costs.map(
+      (item) =>
+        `${item.category}: ${currency}${formatUsd(parsePrice(item.price))}`
+    );
+    lines.push(`TOTAL: ${currency}${formatUsd(total)}`);
+    await navigator.clipboard.writeText(lines.join("\n"));
+  };
 
   return (
     <div className="overflow-hidden rounded-2xl border border-white/40 bg-white/70 shadow-lg shadow-slate-200/40 backdrop-blur">
@@ -62,7 +72,16 @@ export default function CostTable({ costs, currency = "$" }: CostTableProps) {
               {formatUsd(total)}
             </td>
             <td className="px-6 py-4 text-sm text-slate-500">
-              Estimated monthly total
+              <div className="flex items-center justify-between gap-4">
+                <span>Estimated monthly total</span>
+                <button
+                  type="button"
+                  onClick={copyBreakdown}
+                  className="rounded-full border border-emerald-200 bg-white px-3 py-1 text-xs font-medium text-emerald-700 transition hover:border-emerald-300 hover:bg-emerald-50"
+                >
+                  Copy Breakdown
+                </button>
+              </div>
             </td>
           </tr>
         </tfoot>

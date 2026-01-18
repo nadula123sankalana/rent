@@ -39,6 +39,34 @@ export default async function CostOfLivingPage({ params }: PageProps) {
     notFound();
   }
 
+  const formatUsd = (value: number) =>
+    new Intl.NumberFormat("en-US", {
+      minimumFractionDigits: 2,
+      maximumFractionDigits: 2
+    }).format(value);
+
+  const parsePrice = (raw: string) => {
+    const normalized = raw.replace(/[^0-9.]/g, "");
+    const parsed = Number.parseFloat(normalized);
+    return Number.isNaN(parsed) ? 0 : parsed;
+  };
+
+  const totalMonthly = post.costs.reduce(
+    (sum, item) => sum + parsePrice(item.price),
+    0
+  );
+  const derivedSalary = Math.round((totalMonthly * 12 * 1.25) / 1000) * 1000;
+  const verdictSalary =
+    post.verdict?.match(/\$([\d,]+)/)?.[1]?.replace(/,/g, "") ?? null;
+  const salaryNeeded = verdictSalary
+    ? Number.parseInt(verdictSalary, 10)
+    : derivedSalary;
+  const verdictTone = salaryNeeded >= 80000 ? "warning" : "success";
+  const verdictClasses =
+    verdictTone === "warning"
+      ? "border-amber-100 bg-amber-50/70 text-amber-900"
+      : "border-emerald-100 bg-emerald-50/70 text-emerald-900";
+
   const datasetSchema = {
     "@context": "https://schema.org",
     "@type": "Dataset",
@@ -66,12 +94,49 @@ export default async function CostOfLivingPage({ params }: PageProps) {
         <h1 className="text-4xl font-semibold text-slate-800">
           {post.title}
         </h1>
-        <p className="text-sm text-slate-500">Published {post.date}</p>
+        <div className="flex flex-wrap items-center gap-3 text-sm text-slate-500">
+          <span>Published {post.date}</span>
+          <span className="rounded-full bg-slate-100 px-3 py-1 text-xs text-slate-500">
+            Last Updated: Jan 2026
+          </span>
+        </div>
       </header>
 
+      <section className="grid gap-4 md:grid-cols-3">
+        <div className="rounded-2xl border border-white/60 bg-white/80 p-5 shadow-sm shadow-slate-200/40">
+          <p className="text-xs uppercase tracking-[0.2em] text-slate-500">
+            Downtown Rent
+          </p>
+          <p className="mt-3 text-2xl font-semibold text-slate-800">
+            ${formatUsd(parsePrice(post.costs[0]?.price ?? "0"))}
+          </p>
+          <p className="text-xs text-slate-500">
+            Typical 1-bed monthly
+          </p>
+        </div>
+        <div className="rounded-2xl border border-white/60 bg-white/80 p-5 shadow-sm shadow-slate-200/40">
+          <p className="text-xs uppercase tracking-[0.2em] text-slate-500">
+            Total Monthly
+          </p>
+          <p className="mt-3 text-2xl font-semibold text-slate-800">
+            ${formatUsd(totalMonthly)}
+          </p>
+          <p className="text-xs text-slate-500">Estimated monthly spend</p>
+        </div>
+        <div className="rounded-2xl border border-white/60 bg-white/80 p-5 shadow-sm shadow-slate-200/40">
+          <p className="text-xs uppercase tracking-[0.2em] text-slate-500">
+            Salary Needed
+          </p>
+          <p className="mt-3 text-2xl font-semibold text-slate-800">
+            ${Math.round(salaryNeeded / 1000)}k
+          </p>
+          <p className="text-xs text-slate-500">Comfortable target</p>
+        </div>
+      </section>
+
       {post.verdict ? (
-        <section className="rounded-2xl border border-emerald-100 bg-emerald-50/70 p-6">
-          <p className="text-xs uppercase tracking-[0.2em] text-emerald-700">
+        <section className={`rounded-2xl border p-6 ${verdictClasses}`}>
+          <p className="text-xs uppercase tracking-[0.2em]">
             Quick Verdict
           </p>
           <p className="mt-3 text-base font-medium text-slate-800">
