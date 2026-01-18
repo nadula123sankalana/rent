@@ -26,7 +26,7 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en-US">
-      <body className={`${inter.variable} ${poppins.variable} font-body`}>
+      <body className={`${inter.variable} ${poppins.variable} font-body overflow-x-hidden`}>
         <div className="min-h-screen">
           <Header />
           <main className="mx-auto max-w-6xl px-6 py-12">{children}</main>
