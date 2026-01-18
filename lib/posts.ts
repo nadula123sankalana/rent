@@ -15,6 +15,7 @@ export type PostData = {
   content: string;
   verdict?: string;
   excerpt?: string;
+  description?: string;
 };
 const posts = postsData as PostData[];
 
