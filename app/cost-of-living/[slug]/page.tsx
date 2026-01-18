@@ -4,15 +4,16 @@ import CostTable from "@/components/CostTable";
 import { getPostBySlug, getPostSlugs } from "@/lib/posts";
 
 type PageProps = {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 };
 
 export function generateStaticParams() {
   return getPostSlugs().map((slug) => ({ slug }));
 }
 
-export function generateMetadata({ params }: PageProps): Metadata {
-  const post = getPostBySlug(params.slug);
+export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
+  const { slug } = await params;
+  const post = getPostBySlug(slug);
   if (!post) {
     return {
       title: "Cost of Living Dataset"
@@ -30,8 +31,9 @@ export function generateMetadata({ params }: PageProps): Metadata {
   };
 }
 
-export default function CostOfLivingPage({ params }: PageProps) {
-  const post = getPostBySlug(params.slug);
+export default async function CostOfLivingPage({ params }: PageProps) {
+  const { slug } = await params;
+  const post = getPostBySlug(slug);
   if (!post) {
     notFound();
   }
