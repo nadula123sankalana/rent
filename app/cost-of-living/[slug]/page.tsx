@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import CostTable from "@/components/CostTable";
 import { CheckCircle2 } from "lucide-react";
 import ReactMarkdown from "react-markdown";
+import CityMap from "@/components/CityMap";
 import { getPostBySlug, getPostSlugs } from "@/lib/posts";
 
 type PageProps = {
@@ -99,7 +100,14 @@ export default async function CostOfLivingPage({ params }: PageProps) {
           </h1>
         </div>
         <div className="flex flex-wrap items-center gap-3 text-sm text-slate-500">
-          <span>Published {post.date}</span>
+          <div className="flex items-center gap-3">
+            <span className="flex h-8 w-8 items-center justify-center rounded-full bg-slate-200 text-xs font-semibold text-slate-600">
+              TL
+            </span>
+            <span>
+              By Taylor Lee • Verified Local Data • Published {post.date}
+            </span>
+          </div>
           <span className="rounded-full bg-slate-100 px-3 py-1 text-xs text-slate-500">
             Last Updated: Jan 2026
           </span>
@@ -127,33 +135,80 @@ export default async function CostOfLivingPage({ params }: PageProps) {
           </p>
           <p className="text-xs text-slate-500">Estimated monthly spend</p>
         </div>
-        <div className="rounded-2xl border border-white/60 bg-white/80 p-5 shadow-sm shadow-slate-200/40">
-          <p className="text-xs uppercase tracking-[0.2em] text-slate-500">
+        <div className="rounded-2xl border border-emerald-500/40 bg-emerald-600 p-5 shadow-lg shadow-emerald-200/40">
+          <p className="text-xs uppercase tracking-[0.2em] text-emerald-100">
             Salary Needed
           </p>
-          <p className="mt-3 text-2xl font-semibold text-slate-800">
+          <p className="mt-3 text-2xl font-semibold text-white">
             ${Math.round(salaryNeeded / 1000)}k
           </p>
-          <p className="text-xs text-slate-500">Comfortable target</p>
+          <p className="text-xs text-emerald-100">Comfortable target</p>
         </div>
       </section>
 
-      {post.verdict ? (
-        <section className={`rounded-2xl border p-6 ${verdictClasses}`}>
-          <p className="text-xs uppercase tracking-[0.2em]">
-            Quick Verdict
-          </p>
-          <p className="mt-3 text-base font-medium text-slate-800">
-            {post.verdict}
-          </p>
-        </section>
-      ) : null}
+      <div className="grid gap-8 lg:grid-cols-[2fr_1fr]">
+        <div className="space-y-10">
+          {post.verdict ? (
+            <section className={`rounded-2xl border p-6 ${verdictClasses}`}>
+              <p className="text-xs uppercase tracking-[0.2em]">
+                Quick Verdict
+              </p>
+              <p className="mt-3 text-base font-medium text-slate-800">
+                {post.verdict}
+              </p>
+            </section>
+          ) : null}
 
-      <CostTable costs={post.costs} currency={post.currency} />
+          <CostTable costs={post.costs} currency={post.currency} />
 
-      <section className="prose prose-slate max-w-3xl">
-        <ReactMarkdown>{post.content}</ReactMarkdown>
-      </section>
+          <section className="prose prose-slate max-w-3xl">
+            <ReactMarkdown>{post.content}</ReactMarkdown>
+          </section>
+        </div>
+
+        <aside className="hidden lg:block">
+          <div className="sticky top-24 space-y-6">
+            <div className="rounded-2xl border border-white/60 bg-white/80 p-6 shadow-sm shadow-slate-200/40">
+              <p className="text-xs uppercase tracking-[0.2em] text-slate-500">
+                Compare Cities
+              </p>
+              <p className="mt-2 text-lg font-semibold text-slate-800">
+                Compare {post.title.split(":")[0]}
+              </p>
+              <div className="mt-4 space-y-2 text-sm text-slate-600">
+                <button className="w-full rounded-xl border border-emerald-200 bg-emerald-50 px-4 py-2 text-emerald-700">
+                  Compare vs. Austin
+                </button>
+                <button className="w-full rounded-xl border border-emerald-200 bg-emerald-50 px-4 py-2 text-emerald-700">
+                  Compare vs. Dallas
+                </button>
+                <button className="w-full rounded-xl border border-emerald-200 bg-emerald-50 px-4 py-2 text-emerald-700">
+                  Compare vs. Seattle
+                </button>
+              </div>
+            </div>
+            <div className="rounded-2xl border border-white/60 bg-white/80 p-6 text-sm text-slate-600 shadow-sm shadow-slate-200/40">
+              <p className="text-xs uppercase tracking-[0.2em] text-slate-500">
+                Map Preview
+              </p>
+              <div className="mt-4">
+                <CityMap city={post.title.split("in ")[1]?.split(":")[0] ?? post.title} />
+              </div>
+            </div>
+            <div className="rounded-2xl border border-white/60 bg-white/80 p-6 text-sm text-slate-600 shadow-sm shadow-slate-200/40">
+              <p className="text-xs uppercase tracking-[0.2em] text-slate-500">
+                Moving Quotes
+              </p>
+              <p className="mt-2">
+                Get instant quotes from top-rated movers in your area.
+              </p>
+              <button className="mt-4 w-full rounded-xl bg-slate-900 px-4 py-2 text-sm font-semibold text-white">
+                Get Quotes
+              </button>
+            </div>
+          </div>
+        </aside>
+      </div>
     </article>
   );
 }
