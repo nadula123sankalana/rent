@@ -1,0 +1,36 @@
+[
+  {
+    "slug": "austin",
+    "title": "Cost of Living in Austin, TX: 2026 Price Guide",
+    "date": "01/25/2026",
+    "currency": "$",
+    "costs": [
+      {
+        "category": "Rent (1-Bed Downtown)",
+        "price": "2450",
+        "note": "High demand near 6th St"
+      },
+      {
+        "category": "Groceries (Whole Foods)",
+        "price": "600",
+        "note": "Monthly for 1 person"
+      },
+      {
+        "category": "Health Insurance",
+        "price": "450",
+        "note": "Silver Plan (ACA)"
+      },
+      {
+        "category": "Car Insurance",
+        "price": "180",
+        "note": "Texas average"
+      },
+      {
+        "category": "Utilities (Summer AC)",
+        "price": "220",
+        "note": "Peak heat months"
+      }
+    ],
+    "content": "\r\nAustin continues to attract new residents with strong job growth, live music,\r\nand a thriving food scene. This dataset focuses on core monthly expenses in USD\r\nto help Americans budget with confidence.\r\n"
+  }
+]

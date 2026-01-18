@@ -4,7 +4,9 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
+    "predev": "node scripts/build-posts.mjs",
     "build": "next build",
+    "prebuild": "node scripts/build-posts.mjs",
     "build:pages": "next build && npx @cloudflare/next-on-pages",
     "start": "next start",
     "lint": "next lint"
